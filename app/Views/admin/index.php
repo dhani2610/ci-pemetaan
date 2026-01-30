@@ -1,0 +1,187 @@
+<?= $this->extend('layout/default') ?>
+
+<?= $this->section('title') ?>
+<title>Data Admin &mdash; Apps Nikah</title>
+<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
+<section class="section">
+    <div class="section-header">
+        <h1>Master Data Admin</h1>
+    </div>
+
+    <?php if (session()->getFlashdata('success')) : ?>
+        <div class="alert alert-success alert-dismissible show fade">
+            <div class="alert-body">
+                <button class="close" data-dismiss="alert">x</button>
+                <b>Success!</b> <?= session()->getFlashdata('success') ?>
+            </div>
+        </div>
+    <?php endif ?>
+
+    <div class="section-body">
+        <div class="card">
+            <div class="card-header">
+                <h4>List Admin</h4>
+                <div class="card-header-action">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">
+                        <i class="fas fa-plus"></i> Tambah Data
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-md">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Lengkap</th>
+                                <th>Username</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($admin as $key => $value) : ?>
+                                <tr>
+                                    <td><?= $key + 1 ?></td>
+                                    <td><?= $value->nama ?></td>
+                                    <td><?= $value->username ?></td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm btn-edit" 
+                                            data-id="<?= $value->id_admin ?>" 
+                                            data-nama="<?= $value->nama ?>" 
+                                            data-username="<?= $value->username ?>">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+
+                                        <form id="delete-form-<?= $value->id_admin ?>" action="<?= site_url('admin/' . $value->id_admin) ?>" method="post" class="d-inline">
+                                            <?= csrf_field() ?>
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $value->id_admin ?>)">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalTambah">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Admin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= site_url('admin/store') ?>" method="post">
+                <?= csrf_field() ?>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" name="nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalEdit">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Admin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= site_url('admin/update') ?>" method="post">
+                <?= csrf_field() ?>
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="id_admin" id="edit_id">
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" name="nama" id="edit_nama" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" name="username" id="edit_username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password (Biarkan kosong jika tidak diganti)</label>
+                        <input type="password" name="password" class="form-control" placeholder="Isi untuk ganti password">
+                    </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    $(document).ready(function() {
+        // Logika untuk Tombol Edit
+        $('.btn-edit').on('click', function() {
+            // Ambil data dari atribut tombol
+            const id = $(this).data('id');
+            const nama = $(this).data('nama');
+            const username = $(this).data('username');
+
+            // Isi value input di dalam Modal Edit
+            $('#edit_id').val(id);
+            $('#edit_nama').val(nama);
+            $('#edit_username').val(username);
+
+            // Tampilkan Modal Edit
+            $('#modalEdit').modal('show');
+        });
+    });
+
+    // Fungsi SweetAlert untuk Delete
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data yang dihapus tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit form penghapusan secara otomatis jika dikonfirmasi
+                document.getElementById('delete-form-' + id).submit();
+            }
+        })
+    }
+</script>
+
+<?= $this->endSection() ?>

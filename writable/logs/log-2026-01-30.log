@@ -1,0 +1,458 @@
+CRITICAL - 2026-01-30 10:37:05 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:37:05 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:37:47 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:37:47 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:37:47 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:37:47 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:37:48 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:37:48 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:37:48 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:37:48 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:37:49 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:37:49 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:37:59 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:37:59 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:38:14 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:38:14 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:38:15 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:38:15 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:05 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:05 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:06 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:06 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:07 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:07 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:07 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:07 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:07 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:07 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:07 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:07 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:08 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:08 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:08 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:08 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:08 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:08 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:39:09 --> str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'str_replace(): ...', 'C:\\xampp\\htdocs...', 438)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\ResponseTrait.php(438): str_replace(Array, '', NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(987): CodeIgniter\HTTP\Response->send()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->sendResponse()
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2026-01-30 10:39:09 --> Uncaught ErrorException: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php:253
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8192, 'strtolower(): P...', 'C:\\xampp\\htdocs...', 253)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Validation\FormatRules.php(253): strtolower(NULL)
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\HTTP\RequestTrait.php(151): CodeIgniter\Validation\FormatRules->valid_ip('::1')
+#3 C:\xampp\htdocs\ci-pemetaan\app\Views\errors\html\error_exception.php(206): CodeIgniter\HTTP\Request->getIPAddress()
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(229): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(232): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Debug\Exceptions.php(116): CodeIgniter\Debug\Exceptions->render(Object(ErrorException), 500)
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2026-01-30 10:40:40 --> Undefined variable $selected_outlet
+#0 C:\xampp\htdocs\ci-pemetaan\app\Views\produk\index.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 42)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('produk/index', Array, true)
+#4 C:\xampp\htdocs\ci-pemetaan\app\Controllers\Produk.php(45): view('produk/index', Array)
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Produk->index()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#7 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2026-01-30 10:40:41 --> Undefined variable $selected_outlet
+#0 C:\xampp\htdocs\ci-pemetaan\app\Views\produk\index.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 42)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Common.php(1097): CodeIgniter\View\View->render('produk/index', Array, true)
+#4 C:\xampp\htdocs\ci-pemetaan\app\Controllers\Produk.php(45): view('produk/index', Array)
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Produk->index()
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#7 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2026-01-30 10:55:14 --> Column 'foto' cannot be null
+CRITICAL - 2026-01-30 10:55:14 --> Column 'foto' cannot be null
+#0 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Model.php(620): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\ci-pemetaan\app\Controllers\Outlet.php(84): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Outlet->store()
+#9 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Outlet))
+#10 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#13 {main}

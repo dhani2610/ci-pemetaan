@@ -1,0 +1,24 @@
+CRITICAL - 2025-12-31 00:21:52 --> Undefined property: App\Controllers\Produk::$umkmModel
+#0 C:\xampp\htdocs\ci-pemetaan\app\Controllers\Produk.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 43)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Produk->index()
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2025-12-31 00:22:16 --> Undefined property: App\Controllers\Produk::$umkmModel
+#0 C:\xampp\htdocs\ci-pemetaan\app\Controllers\Produk.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 43)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Produk->index()
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2025-12-31 00:22:18 --> Undefined property: App\Controllers\Produk::$umkmModel
+#0 C:\xampp\htdocs\ci-pemetaan\app\Controllers\Produk.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 43)
+#1 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(824): App\Controllers\Produk->index()
+#2 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#3 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\ci-pemetaan\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\ci-pemetaan\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
