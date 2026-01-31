@@ -62,8 +62,8 @@ $routes->get('outlet', 'Outlet::index');
 $routes->post('outlet/store', 'Outlet::store');
 $routes->post('outlet/update', 'Outlet::update'); // Pakai POST karena ada upload file
 $routes->delete('outlet/(:num)', 'Outlet::destroy/$1');
-// Helper untuk ambil data operasional via AJAX saat Edit
 $routes->get('outlet/getData/(:num)', 'Outlet::getData/$1');
+$routes->post('outlet/approve', 'Outlet::approve');
 
 
 $routes->get('produk', 'Produk::index');

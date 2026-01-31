@@ -13,7 +13,7 @@
     /* Styling Peta */
     #map-wrapper {
         position: relative;
-        height: 85vh; /* Sedikit ditinggikan */
+        height: 85vh;
         width: 100%;
         border: 1px solid #ddd;
         border-radius: 5px;
@@ -50,8 +50,26 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         width: 320px;
         display: none;
-        max-height: 85vh; /* Agar bisa discroll jika rute panjang */
+        max-height: 85vh;
         overflow-y: auto;
+    }
+
+    /* Floating LOG Panel (DEBUG) */
+    #debug-log {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.8);
+        color: #00ff00; /* Warna hijau ala hacker */
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+        font-family: monospace;
+        font-size: 11px;
+        max-height: 200px;
+        overflow-y: auto;
+        pointer-events: none; /* Supaya klik tembus ke peta */
     }
 
     /* Styling Instruksi Rute */
@@ -93,6 +111,11 @@
                         </div>
                         <div id="route-summary" class="alert alert-info py-2 px-3 mb-2" style="font-size: 13px;"></div>
                         <div id="route-instructions">Loading...</div>
+                    </div>
+
+                    <div id="debug-log">
+                        <strong>SYSTEM LOG:</strong><br>
+                        <span id="log-content">Menunggu GPS...</span>
                     </div>
 
                     <div id="map"></div>
@@ -146,9 +169,12 @@
     var userMarker;
     var userLat, userLng;
     
-    // UBAH: Gunakan Object {} bukan Array [] agar bisa update berdasarkan ID dengan cepat
+    // Variabel Global Navigasi
+    var activeDestLat = null; 
+    var activeDestLng = null; 
+    var isNavigating = false; 
+
     var outletMarkers = {}; 
-    
     var routingControl;
 
     // Icons
@@ -158,36 +184,74 @@
 
     $(document).ready(function() {
         initMap();
-        getUserLocation();
-        loadGeoJson();
         
-        // Load data pertama kali
+        getUserLocation();
+        
+        loadGeoJson();
         fetchOutlets(); 
         
-        // UBAH: Set interval untuk refresh data setiap 3 detik (3000 ms)
         setInterval(fetchOutlets, 3000);
     });
+
+    function addLog(message) {
+        var time = new Date().toLocaleTimeString();
+        var html = `[${time}] ${message}<br>`;
+        $('#log-content').prepend(html); // Pesan baru di atas
+    }
 
     function initMap() {
         map = L.map('map').setView([-7.79558, 110.36949], 11);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
+            attribution: '© OpenStreetMap'
         }).addTo(map);
     }
 
     function getUserLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(function(position) { // Pakai watchPosition agar marker user juga realtime
-                userLat = position.coords.latitude;
-                userLng = position.coords.longitude;
+            addLog("Mengaktifkan GPS Watcher...");
+            
+            navigator.geolocation.watchPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                var acc = position.coords.accuracy;
+
+                userLat = lat;
+                userLng = lng;
+                var newUserLatLng = new L.LatLng(userLat, userLng);
+                
+                addLog(`GPS Update: ${lat.toFixed(5)}, ${lng.toFixed(5)}`);
                 
                 if(userMarker) {
-                    userMarker.setLatLng([userLat, userLng]);
+                    userMarker.setLatLng(newUserLatLng);
+                    userMarker.setPopupContent(`<b>Lokasi Anda</b><br>Akurasi: ${Math.round(acc)}m`);
                 } else {
-                    userMarker = L.marker([userLat, userLng], {icon: iconUser}).addTo(map)
-                        .bindPopup("<b>Lokasi Anda</b>").openPopup();
+                    userMarker = L.marker(newUserLatLng, {icon: iconUser}).addTo(map)
+                        .bindPopup(`<b>Lokasi Anda</b><br>Akurasi: ${Math.round(acc)}m`).openPopup();
+                    map.setView(newUserLatLng, 15); // Zoom awal ke user
                 }
-            }, function(err) { console.log(err); }, { enableHighAccuracy: true });
+
+                // ===============================================
+                // UPDATE RUTE JIKA SEDANG NAVIGASI
+                // ===============================================
+                if (isNavigating && routingControl && activeDestLat && activeDestLng) {
+                    addLog("-> Menghitung ulang rute...");
+                    
+                    routingControl.setWaypoints([
+                        newUserLatLng,
+                        L.latLng(activeDestLat, activeDestLng)
+                    ]);
+                }
+
+            }, function(err) { 
+                addLog("ERROR GPS: " + err.message);
+                console.log(err); 
+            }, { 
+                enableHighAccuracy: true, 
+                maximumAge: 0,            
+                timeout: 5000             
+            });
+        } else {
+            alert("Browser Anda tidak mendukung Geolocation.");
         }
     }
 
@@ -199,28 +263,23 @@
         });
     }
 
-    // UBAH: Fungsi Fetch Realtime
     function fetchOutlets() {
+        
         $.getJSON("<?= site_url('peta/api/outlets') ?>", function(data) {
-            
-            // Loop data baru dari server
             data.forEach(function(outlet) {
                 var id = outlet.id_outlet;
                 
-                // Cek apakah marker sudah ada di Peta?
                 if (outletMarkers[id]) {
-                    // JIKA ADA: Update posisinya saja (Animasi pindah)
-                    outletMarkers[id].setLatLng([outlet.latitude, outlet.longitude]);
-                    
-                    // Update data yang tersimpan di marker (untuk search & popup)
+                    var oldLatLng = outletMarkers[id].getLatLng();
+                    if(oldLatLng.lat != outlet.latitude || oldLatLng.lng != outlet.longitude) {
+                        outletMarkers[id].setLatLng([outlet.latitude, outlet.longitude]);
+                        addLog(`Outlet ${outlet.nama} berpindah lokasi.`);
+                    }
                     outletMarkers[id].outletData = outlet; 
                 } else {
-                    // JIKA BELUM ADA: Buat marker baru
                     var myIcon = (outlet.kategori == 'Kuliner') ? iconKuliner : iconOleh;
-                    
                     var marker = L.marker([outlet.latitude, outlet.longitude], {icon: myIcon}).addTo(map);
                     
-                    // Isi konten Popup
                     var popupContent = `
                         <div class="text-center">
                             <b>${outlet.nama}</b><br>
@@ -230,34 +289,25 @@
                         </div>
                     `;
                     marker.bindPopup(popupContent);
-                    
-                    // Simpan data di properti marker
                     marker.outletData = outlet;
-
-                    // Masukkan ke Object penyimpanan
                     outletMarkers[id] = marker;
                 }
             });
         });
     }
 
-    // Fitur Search (Diperbarui karena outletMarkers sekarang Object)
     $('#search-input').on('keyup', function() {
         var keyword = $(this).val().toLowerCase();
-        
-        // Ubah Object ke Array dulu untuk searching
         var markersArray = Object.values(outletMarkers);
-        
         var found = markersArray.find(m => m.outletData.nama.toLowerCase().includes(keyword));
-        
         if(found && keyword.length > 2) {
             map.setView(found.getLatLng(), 15);
             found.openPopup();
         }
     });
 
-    // Detail Function (Sama seperti sebelumnya)
     window.showDetail = function(id) {
+        addLog("Membuka detail outlet ID: " + id);
         $.getJSON("<?= site_url('peta/api/detail/') ?>" + id, function(res) {
             var o = res.outlet;
             $('#d-nama').text(o.nama);
@@ -266,6 +316,7 @@
             $('#d-deskripsi').text(o.deskripsi);
             var imgUrl = o.foto ? '<?= base_url('uploads/outlet/') ?>/' + o.foto : 'https://via.placeholder.com/300';
             $('#d-foto').attr('src', imgUrl);
+            
             $('#btn-rute-modal').attr('onclick', `getRoute(${o.latitude}, ${o.longitude}); $('#modalDetail').modal('hide');`);
             
             var prodHtml = '';
@@ -279,10 +330,14 @@
         });
     };
 
-    // UBAH: Routing Logic dengan Instruksi Lengkap
     window.getRoute = function(destLat, destLng) {
         if(!userLat) { alert("Menunggu lokasi GPS Anda..."); return; }
 
+        activeDestLat = destLat;
+        activeDestLng = destLng;
+        isNavigating = true; 
+
+        addLog(`Memulai navigasi ke: ${destLat}, ${destLng}`);
         $('#route-panel').show();
         $('#route-instructions').html('<i>Menghitung rute...</i>');
 
@@ -290,31 +345,30 @@
 
         routingControl = L.Routing.control({
             waypoints: [
-                L.latLng(userLat, userLng),
+                L.latLng(userLat, userLng), 
                 L.latLng(destLat, destLng)
             ],
             routeWhileDragging: false,
-            // Sembunyikan default container leaflet
+            addWaypoints: false, 
             createMarker: function() { return null; },
-            show: false // Jangan show default panel di map
+            show: false 
         }).addTo(map);
 
+        // Event listener saat rute ditemukan
         routingControl.on('routesfound', function(e) {
             var routes = e.routes;
             var summary = routes[0].summary;
-            var instructions = routes[0].instructions; // UBAH: Ambil data instruksi
+            var instructions = routes[0].instructions;
 
-            // 1. Tampilkan Summary (Jarak & Waktu)
             var dist = (summary.totalDistance / 1000).toFixed(1) + ' km';
             var time = Math.round(summary.totalTime / 60) + ' menit';
             $('#route-summary').html(`<b>Jarak:</b> ${dist} &bull; <b>Estimasi:</b> ${time}`);
-
-            // 2. Loop Instruksi Jalan (Turn-by-turn)
-            var stepsHtml = '<div class="list-group list-group-flush">';
             
+            addLog("Rute diperbarui. Jarak: " + dist);
+
+            var stepsHtml = '<div class="list-group list-group-flush">';
             instructions.forEach(function(step, i) {
-                // translate ikon arah sederhana (opsional)
-                var icon = '<i class="fas fa-arrow-up"></i>'; // Default lurus
+                var icon = '<i class="fas fa-arrow-up"></i>';
                 if(step.type == 'TurnRight') icon = '<i class="fas fa-arrow-right"></i>';
                 if(step.type == 'TurnLeft') icon = '<i class="fas fa-arrow-left"></i>';
                 if(step.type == 'Roundabout') icon = '<i class="fas fa-sync"></i>';
@@ -328,11 +382,12 @@
                 `;
             });
             stepsHtml += '</div>';
-
             $('#route-instructions').html(stepsHtml);
-            
-            // Sembunyikan container bawaan Leaflet Routing Machine agar tidak double
             $('.leaflet-routing-container').hide();
+        });
+        
+        routingControl.on('routingerror', function(e) {
+            addLog("Error Routing: " + e.error.message);
         });
     };
 
@@ -341,6 +396,10 @@
             map.removeControl(routingControl);
             routingControl = null;
         }
+        isNavigating = false;
+        activeDestLat = null;
+        activeDestLng = null;
+        addLog("Navigasi dihentikan.");
         $('#route-panel').hide();
     }
 </script>

@@ -9,6 +9,9 @@
     /* Agar map muncul di dalam modal */
     #mapContainer { height: 400px; width: 100%; border-radius: 5px; margin-top: 28px;}
     .ops-row { margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+    .badge-warning{
+        background: orange;
+    }
 </style>
 
 <section class="section">
@@ -39,6 +42,7 @@
                                 <th>Kategori</th>
                                 <th>Kabupaten</th>
                                 <th>Lokasi</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -48,19 +52,47 @@
                                 <td><?= $key + 1 ?></td>
                                 <td><?= $row['nama'] ?></td>
                                 <td>
-                                   
-                                        <?= $row['kategori'] ?>
-
+                                    <?= $row['kategori'] ?>
                                 </td>
                                 <td><?= $row['kabupaten'] ?></td>
                                 <td><a href="https://maps.google.com/?q=<?= $row['latitude'] ?>,<?= $row['longitude'] ?>" target="_blank" class="btn btn-sm btn-info"><i class="fas fa-map-marker-alt"></i> Maps</a></td>
                                 <td>
-                                    <button class="btn btn-success btn-sm" onclick="editData(<?= $row['id_outlet'] ?>)"><i class="fas fa-pencil-alt"></i></button>
-                                    <form id="delete-form-<?= $row['id_outlet'] ?>" action="<?= site_url('outlet/'.$row['id_outlet']) ?>" method="post" class="d-inline">
-                                        <?= csrf_field() ?>
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $row['id_outlet'] ?>)"><i class="fas fa-trash"></i></button>
-                                    </form>
+                                    <?php 
+                                    $badgeClass = 'badge-secondary';
+                                    if($row['status'] == 'Approved') $badgeClass = 'badge-success';
+                                    elseif($row['status'] == 'Rejected') $badgeClass = 'badge-danger';
+                                    elseif($row['status'] == 'Waiting Approval') $badgeClass = 'badge-warning';
+                                    ?>
+                                    <span class="badge <?= $badgeClass ?>"><?= $row['status'] ?></span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-warning btn-edit" data-id="<?= $row['id_outlet'] ?>"><i class="fas fa-edit"></i></button>
+                                        <form action="<?= base_url('outlet/' . $row['id_outlet']) ?>" method="post" class="d-inline" onsubmit="return confirm('Hapus data?')">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </form>
+
+                                        <?php if (session()->get('role') == 'admin') : ?>
+                                            <div class="dropdown d-inline">
+                                                <button class="btn btn-sm btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+                                                    Approval
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <form action="<?= base_url('outlet/approve') ?>" method="post">
+                                                        <input type="hidden" name="id_outlet" value="<?= $row['id_outlet'] ?>">
+                                                        <button type="submit" name="status" value="Approved" class="dropdown-item text-success">
+                                                            <i class="fas fa-check"></i> Approve
+                                                        </button>
+                                                    </form>
+                                                    <form action="<?= base_url('outlet/approve') ?>" method="post">
+                                                        <input type="hidden" name="id_outlet" value="<?= $row['id_outlet'] ?>">
+                                                        <button type="submit" name="status" value="Rejected" class="dropdown-item text-danger">
+                                                            <i class="fas fa-times"></i> Reject
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -156,8 +188,7 @@
 
                             <div class="form-group">
                                 <label>Foto Outlet</label>
-                                <input type="file" name="foto" class="form-control">
-                                <small class="text-muted">Kosongkan jika tidak ingin mengubah foto (saat edit)</small>
+                                <input type="file" name="foto" required class="form-control">
                             </div>
                         </div>
 

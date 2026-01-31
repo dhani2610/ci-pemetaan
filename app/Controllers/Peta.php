@@ -26,7 +26,7 @@ class Peta extends BaseController
 
     public function getOutlets()
     {
-        $data = $this->outletModel->findAll();
+        $data = $this->outletModel->where('status', 'Approved')->findAll();
         return $this->response->setJSON($data);
     }
 

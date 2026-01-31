@@ -76,6 +76,7 @@ class Outlet extends BaseController
             'latitude'  => $this->request->getPost('latitude'),
             'longitude' => $this->request->getPost('longitude'),
             'foto'      => $namaFoto,
+            'status'    => 'Waiting Approval',
         ];
 
 
@@ -105,6 +106,22 @@ class Outlet extends BaseController
         }
 
         return redirect()->to('outlet')->with('success', 'Data Outlet Berhasil Disimpan');
+    }
+
+    public function approve()
+    {
+        if (session()->get('role') != 'admin') {
+            return redirect()->back()->with('error', 'Unauthorized access');
+        }
+
+        $id = $this->request->getPost('id_outlet');
+        $status = $this->request->getPost('status'); // 'Approved' or 'Rejected'
+
+        if ($this->outletModel->update($id, ['status' => $status])) {
+            return redirect()->to('outlet')->with('success', 'Status Outlet Berhasil Diubah menjadi ' . $status);
+        } else {
+            return redirect()->to('outlet')->with('error', 'Gagal mengubah status');
+        }
     }
 
     public function update()
