@@ -9,24 +9,44 @@ class Auth extends BaseController
        return redirect()->to(site_url('login'));
     }
 
+    // 1. Login untuk UMKM
     public function login()
     {
        if(session('id_user')){
          return redirect()->to(site_url('home'));
        }
-       return view('auth/login');
+       
+       $data = [
+           'title' => 'Login UMKM',
+           'role'  => 'umkm' // Set role otomatis
+       ];
+
+       return view('auth/login', $data);
+    }
+
+    // 2. Login untuk ADMIN (Method Baru)
+    public function adminLogin()
+    {
+       if(session('id_user')){
+         return redirect()->to(site_url('home'));
+       }
+
+       $data = [
+           'title' => 'Login Administrator',
+           'role'  => 'admin' // Set role otomatis
+       ];
+
+       return view('auth/login', $data);
     }
 
     public function loginProcess()
     {
        $post = $this->request->getPost();
        
-       // Ambil inputan role dari form
        $role = $post['role']; // 'admin' atau 'umkm'
        $username = $post['username'];
        $password = $post['password'];
 
-       // Tentukan tabel berdasarkan role
        if($role == 'admin') {
            $table = 'tb_admin';
        } else {
@@ -41,22 +61,25 @@ class Auth extends BaseController
            // Cek Password
            if(password_verify($password, $user->password)){
                
-               // Khusus UMKM: Cek Status Aktif/Tidak
                if($role == 'umkm' && $user->status != 'Aktif'){
                    return redirect()->back()->with('error', 'Akun Anda Non-Aktif. Hubungi Admin.');
                }
 
-               // Siapkan Session
                $param = [
                    'id_user'   => ($role == 'admin') ? $user->id_admin : $user->id_umkm,
                    'username'  => $user->username,
-                   'nama'      => $user->nama, // Biar bisa tampil nama di dashboard
-                   'role'      => $role, // 'admin' atau 'umkm'
+                   'nama'      => $user->nama, 
+                   'role'      => $role, 
                    'isLoggedIn'=> true
                ];
                
                session()->set($param);
-               return redirect()->to(site_url('peta'));
+               
+               if($role == 'admin') {
+                    return redirect()->to(site_url('admin')); // Contoh dashboard admin
+               } else {
+                    return redirect()->to(site_url('peta'));
+               }
 
            } else {
                return redirect()->back()->with('error', 'Password tidak sesuai');
@@ -68,10 +91,10 @@ class Auth extends BaseController
 
     public function logout()
     {
-       session()->destroy(); // Hapus semua session
+       session()->destroy(); 
        return redirect()->to(site_url('login'));
     }
-
+    
     public function register()
     {
         if (session('id_user')) {
@@ -80,17 +103,15 @@ class Auth extends BaseController
         return view('auth/register');
     }
 
-    // 2. PROSES PENYIMPANAN DATA REGISTER
     public function registerProcess()
     {
-        // Validasi Input
         if (!$this->validate([
             'nama' => [
                 'rules' => 'required',
                 'errors' => ['required' => 'Nama UMKM harus diisi']
             ],
             'username' => [
-                'rules' => 'required|is_unique[tb_umkm.username]', // Cek agar username tidak kembar
+                'rules' => 'required|is_unique[tb_umkm.username]', 
                 'errors' => [
                     'required' => 'Username harus diisi',
                     'is_unique' => 'Username sudah terdaftar, gunakan yang lain'
@@ -108,22 +129,18 @@ class Auth extends BaseController
                 'errors' => ['matches' => 'Konfirmasi password tidak sesuai']
             ],
         ])) {
-            // Jika validasi gagal, kembalikan ke form dengan error
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        // Siapkan Data
         $data = [
             'nama'     => $this->request->getPost('nama'),
             'username' => $this->request->getPost('username'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_BCRYPT),
-            'status'   => 'Aktif', // Default langsung Aktif saat register sendiri
+            'status'   => 'Aktif', 
         ];
 
-        // Simpan ke Tabel tb_umkm
         $this->db->table('tb_umkm')->insert($data);
 
-        // Redirect ke Login dengan Pesan Sukses
         return redirect()->to(site_url('login'))->with('success', 'Registrasi Berhasil! Silakan Login.');
     }
 }

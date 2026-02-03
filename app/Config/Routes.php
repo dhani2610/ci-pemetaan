@@ -40,7 +40,7 @@ $routes->get('create-db', function(){
 
 //route login
 $routes->get('login', 'Auth::login');
-
+$routes->get('admin-login', 'Auth::adminLogin');
 $routes->get('register', 'Auth::register');
 $routes->post('auth/registerProcess', 'Auth::registerProcess');
 
