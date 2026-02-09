@@ -279,9 +279,11 @@
                 } else {
                     var myIcon = (outlet.kategori == 'Kuliner') ? iconKuliner : iconOleh;
                     var marker = L.marker([outlet.latitude, outlet.longitude], {icon: myIcon}).addTo(map);
-                    
+                    var imgUrl = outlet.foto ? '<?= base_url('uploads/outlet/') ?>/' + outlet.foto : 'https://via.placeholder.com/300';
                     var popupContent = `
                         <div class="text-center">
+                            <img id="d-foto-${outlet.id_outlet}" src="${imgUrl}" class="img-fluid rounded mb-3" style="width: 100%; height: 100%; object-fit: cover;">
+
                             <b>${outlet.nama}</b><br>
                             <span class="badge badge-light">${outlet.kategori}</span><br>
                             <button class="btn btn-sm btn-info mt-2" onclick="showDetail(${outlet.id_outlet})">Detail</button>

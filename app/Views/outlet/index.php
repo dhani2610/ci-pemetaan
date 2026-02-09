@@ -66,7 +66,7 @@
                                     <span class="badge <?= $badgeClass ?>"><?= $row['status'] ?></span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-warning btn-edit" data-id="<?= $row['id_outlet'] ?>"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-warning btn-edit" onclick="editData(<?= $row['id_outlet'] ?>)" data-id="<?= $row['id_outlet'] ?>"><i class="fas fa-edit"></i></button>
                                         <form action="<?= base_url('outlet/' . $row['id_outlet']) ?>" method="post" class="d-inline" onsubmit="return confirm('Hapus data?')">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
